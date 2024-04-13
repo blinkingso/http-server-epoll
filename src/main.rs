@@ -52,7 +52,7 @@ fn main() -> io::Result<()> {
             match event.u64 {
                 100 => {
                     match listener.accept() {
-                        Ok((mut stream, address)) => {
+                        Ok((stream, address)) => {
                             stream.set_nonblocking(true)?;
                             println!("new connection: {}", address);
                             key += 1;
